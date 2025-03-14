@@ -64,21 +64,21 @@ const UserFinder = () => {
         {/* User data display */}
         {user && (
           <div className="mt-6 bg-gray-50 p-6 rounded-lg shadow-lg transition duration-300 hover:shadow-xl">
-            <div className="flex items-center mb-4">
+            <div className="flex flex-col md:flex-row items-center mb-4">
               <img
                 src={user.avatar_url}
                 alt={user.login}
                 className="rounded-full w-32 h-32 border-4 border-purple-600 transform transition duration-300 hover:scale-110"
               />
-              <div className="ml-4">
-                <h2 className="text-2xl font-bold text-gray-800">
+              <div className="ml-4 mt-4 md:mt-0">
+                <h2 className="text-2xl font-bold text-gray-800 truncate">
                   {user.name}
                 </h2>
-                <p className="text-sm text-gray-600">@{user.login}</p>
+                <p className="text-sm text-gray-600 truncate">@{user.login}</p>
               </div>
             </div>
 
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 break-words">
               {user.bio || "No bio available"}
             </p>
             <p className="mt-4 text-gray-600">Followers: {user.followers}</p>
